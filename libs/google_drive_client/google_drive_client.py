@@ -1,6 +1,7 @@
 from .clients.google_api_client import GoogleApiDriveClient
 from .google_drive_client_contract import GoogleDriveClientContract
 from .types.google_drive_client_types import DriveClientInitArgs, DriveEntry
+from pathlib import Path
 
 
 class GoogleDriveClient(GoogleDriveClientContract):
@@ -25,3 +26,18 @@ class GoogleDriveClient(GoogleDriveClientContract):
 
     def upload_to(self, source_path: str, destination_path: str) -> list[DriveEntry]:
         return self.client_obj.upload_to(source_path, destination_path)
+
+    def download(self, source_path: str, destination_path: str):
+        return self.client_obj.download(source_path, destination_path)
+
+    def download_entries(
+        self,
+        entries: list[DriveEntry],
+        destination_path: str | Path,
+        max_workers: int = 6,
+    ) -> dict[str, Path]:
+        return self.client_obj.download_entries(
+            entries=entries,
+            destination_path=destination_path,
+            max_workers=max_workers,
+        )
