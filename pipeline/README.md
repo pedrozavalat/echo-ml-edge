@@ -35,5 +35,3 @@ excluidos de `.gitignore` con una excepción puntual (ver ese archivo): el check
   a SpeciesNet).
 - `train_classifier.py` — entrenamiento desde cero sobre Snapshot con ResNet50 o ViT.
 - `finetune_cv.py` — domain adaptation con 5-fold CV sobre HPL (ViT/ResNet50), 7 clases.
-
-Ver `memoria_proyecto.md` y `data/outputs/MANIFEST.md` para el historial completo de iteraciones.
