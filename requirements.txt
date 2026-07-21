@@ -1,4 +1,31 @@
-gdown
-google-api-python-client
-aiohttp
-certifi
+# PyTorch (CPU build used in dev). For CPU-only install:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# For CUDA, install torch separately following https://pytorch.org/get-started/locally/ first.
+torch
+torchvision
+timm==1.0.27
+
+# MegaDetector (species-agnostic animal detector used in the pipeline)
+PytorchWildlife==1.3.0
+
+# Data / metrics
+numpy==2.4.4
+pandas==3.0.3
+scikit-learn==1.9.0
+openpyxl==3.1.5
+
+# Images
+pillow==12.2.0
+opencv-python==4.13.0.92
+
+# Utilities
+tqdm
+
+# Google Drive access (service account)
+google-api-python-client==2.197.0
+google-auth==2.55.0
+google-auth-httplib2==0.4.0
+requests==2.34.2
+
+# Testing
+pytest==8.3.4
