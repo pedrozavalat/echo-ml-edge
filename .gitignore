@@ -1,3 +1,32 @@
+# Local datasets and training artifacts
+data/
+outputs/
+*.pt
+
+# Excepciones: checkpoint activo del modelo SpeciesNet fine-tuneado (21 clases) y
+# las imágenes de evaluación HPL que necesita para correr — ver pipeline/README.md
+# (un directorio excluido por "data/" o "outputs/" bloquea la negación de archivos
+# sueltos dentro; hay que reabrir la cadena completa de directorios primero)
+!data/
+data/*
+!data/outputs/
+!data/downloaded_eval_images.zip
+!data/preprocessed_images/
+data/outputs/*
+!data/outputs/speciesnet_species_best_21classes.pt
+
+# Google service account credentials (secrets, never commit)
+**/credenciales-json/
+
+# Internal Claude Code planning artifacts (not team-facing docs)
+docs/superpowers/
+.claude/
+.superpowers/
+
+# Archivos de contexto/memoria internos (no team-facing)
+contexto*.md
+memoria_proyecto.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -151,6 +180,7 @@ activemq-data/
 .env
 .envrc
 .venv
+.venv-speciesnet
 env/
 venv/
 ENV/
