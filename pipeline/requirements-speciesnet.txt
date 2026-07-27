@@ -1,0 +1,27 @@
+# Entorno separado para el modelo SpeciesNet fine-tuneado (speciesnet_backbone.py,
+# train_classifier_speciesnet.py, eval_speciesnet_*_pipeline.py).
+#
+# Requiere Python 3.12 (el .venv principal usa 3.14, donde el checkpoint no es
+# deserializable por falta de onnx2torch). Setup:
+#   python3.12 -m venv .venv-speciesnet
+#   .venv-speciesnet/bin/pip install -r pipeline/requirements-speciesnet.txt
+#
+# El checkpoint base de SpeciesNet (EfficientNetV2-M) se auto-descarga la primera
+# vez vía kagglehub a ~/.cache/kagglehub (modelo público, no requiere credenciales
+# de Kaggle) — necesita conexión a internet en el primer run.
+
+speciesnet==5.0.5
+onnx==1.22.0
+onnx2torch==1.5.15
+kagglehub==1.0.2
+torch==2.13.0+cpu
+torchvision==0.28.0+cpu
+numpy==2.4.4
+pandas==3.0.3
+scikit-learn==1.9.0
+pillow==12.2.0
+opencv-python==5.0.0.93
+tqdm==4.69.0
+openpyxl==3.1.5
+
+--extra-index-url https://download.pytorch.org/whl/cpu
